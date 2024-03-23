@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Eczar, Syne } from "next/font/google";
+import { Eczar, Karla, Syne } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navigation";
 
-const font = Eczar({ subsets: ["latin"] });
+const font = Karla({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Nextademy",
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        <Navbar />
+        {children}
+        </body>
     </html>
   );
 }
