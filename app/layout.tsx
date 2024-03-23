@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Eczar, Karla, Syne } from "next/font/google";
+import {  Karla } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navigation";
+import { ThemeProvider } from "@/components/theme-provider"
+
 
 const font = Karla({ subsets: ["latin"] });
 
@@ -16,10 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={font.className}>
-        <Navbar />
-        {children}
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar />
+            {children}
+          </ThemeProvider>
         </body>
     </html>
   );
