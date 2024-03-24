@@ -7,7 +7,7 @@ export const CourseShowcase = () => {
         {
             id:1,
             title:"Fundamentals of Next JS ",
-            description:" This course will teach you as a new bee or begginer everything you need to know to grasp the foundation of this great framework",
+            description:" This course will teach you as a new bee/beginner everything you need to know to grasp the foundation of this great framework",
             chapters:[
                 {
                     title:"Introduction to Next JS",
