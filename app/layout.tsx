@@ -3,6 +3,7 @@ import {  Karla } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider"
+import ModalProvider from "@/components/providers/modal-provider";
 
 
 const font = Karla({ subsets: ["latin"] });
@@ -26,6 +27,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <ModalProvider />
             <Navbar />
             {children}
           </ThemeProvider>
