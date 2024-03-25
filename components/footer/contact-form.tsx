@@ -26,11 +26,11 @@ export const ContactForm = () => {
         templateParams,
         process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
       )
-      setSuccess(`Your feedback has been gladly submitted, thanks ${name}`)
+      setSuccess(`Your feedback has been gladly received, thanks ${name}`)
       setName("")
       setEmail("")
       setMessage("")
-      
+
     } catch (error:any) {
       console.error
       setErr(error)
