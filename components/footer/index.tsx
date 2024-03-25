@@ -1,10 +1,12 @@
 import React from 'react'
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { ContactForm } from './contact-form'
 
 const Footer = () => {
   return (
     <div className=' gap-y-1 mt-2 border-t-2 border-zinc-500  rounded-t-lg w-full p-2' id='contact'>
+      <ContactForm />
       <footer className="text-gray-600 body-font bg-white rounded-md">
   <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
     <a className="flex title-font font-medium items-center md:justify-start justify-center text-neutral-200" href='/'>
