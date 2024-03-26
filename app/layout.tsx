@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navigation";
 import { ThemeProvider } from "@/components/theme-provider"
 import ModalProvider from "@/components/providers/modal-provider";
+import { Analytics } from '@vercel/analytics/react';
 
 
 const font = Karla({ subsets: ["latin"] });
@@ -30,6 +31,7 @@ export default function RootLayout({
             <ModalProvider />
             <Navbar />
             {children}
+            <Analytics />
           </ThemeProvider>
         </body>
     </html>
