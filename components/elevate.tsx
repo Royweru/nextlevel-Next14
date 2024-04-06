@@ -171,8 +171,22 @@ export const Elevate = () => {
         </div>
       </div>
       <h1 className=" text-3xl font-semibold my-3 text-center  text-rose-400">
-        
+        THE DJANGO FRAMEWORK
       </h1>
+      <div className=" w-full grid md:grid-cols-2 grid-cols-1 gap-4">
+        <div className=" col-span-1 relative">
+        <iframe 
+        className=" w-full relative rounded-2xl"
+         height="390"
+          src="https://www.youtube.com/embed/PtQiiknWUcI"
+           title="Python Django 7 Hour Course" 
+           frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen></iframe>
+        </div>
+        
+      </div>
     </div>
   );
 };
