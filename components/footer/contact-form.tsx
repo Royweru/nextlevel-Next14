@@ -20,12 +20,21 @@ export const ContactForm = () => {
     }
     try {
       setIsLoading(true)
-       await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
-        templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
-      )
+      if(message&&email&&name){
+        await emailjs.send(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+          templateParams,
+          process.env.NEXT_PUBLIC_EMAILJS_USER_ID as string
+        )
+      }else if(!message){
+        setErr("Oopsy! you need to fill in a message")
+      }else if(!name){
+        setErr("You need to fill in a name")
+      }else{
+        setErr("You email is needed")
+      }
+    
       setSuccess(`Your feedback has been gladly received, thanks ${name}`)
       setName("")
       setEmail("")
@@ -75,12 +84,16 @@ export const ContactForm = () => {
           </div>:<div>SUBMIT</div>}
          </Button>
       </div>
-      {success &&(
+      {success &&!err &&(
          <div className=' w-full bg-emerald-900 p-4 font-semibold text-black font-serif'>
          {success}
         </div>
       )}
-     
+      {err &&(
+         <div className=' w-full bg-rose-700 p-4 font-semibold text-black font-serif'>
+         {err}
+        </div>
+      )}
     </form>
    
   )
